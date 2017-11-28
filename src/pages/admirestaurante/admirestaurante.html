@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AdmirestaurantePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Admirestaurante</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="irpage()"></button>
+        <ion-icon name="add">Admirestaurante</ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let item of menuRef$ | async" 
+     detail-push navPush="EditrestaurantePage" 
+    [navParams]="{item :item}">
+
+      {{item.nombre}}
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

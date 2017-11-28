@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      <img src="assets/img/logo.png" class="navbarLogo" />
+    <ion-title>
+      Homepage
+    </ion-title>
+  <button ion-button md-cart class="carro" >
+      <ion-icon name="cart"></ion-icon>
+  </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button color="positive" block (click)="logMeOut()">
+    Log Me Out Please
+  </button>
+  <ion-list>
+    
+    <ion-item *ngFor="let item of menuRef$ | async">
+      {{item.nombre}}
+
+    </ion-item>
+  </ion-list>
+</ion-content>
